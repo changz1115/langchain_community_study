@@ -64,8 +64,10 @@ def main():
         | llm
         | StrOutputParser()
     )
+    print("Q&A")
     print(rag_chain.invoke("What is Task Decomposition?"))
 
+    print("Q&A with source")
     rag_chain_from_docs = (
         RunnablePassthrough.assign(context=(lambda x: format_docs(x["context"])))
         | prompt

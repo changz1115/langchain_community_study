@@ -15,3 +15,5 @@ xinference-local --host 127.0.0.1 --port 9997
 xinference-local --host localhost --port 9997
 HF_ENDPOINT=https://hf-mirror.com XINFERENCE_HOME=/usr/xinference xinference-local --host 10.1.104.172 --port 9997
 ```
+
+https://python.langchain.com/docs/use_cases/question_answering/sources

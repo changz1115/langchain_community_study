@@ -41,8 +41,8 @@ def main():
 
     print("2. 矢量并存储")
     print("2.1 矢量模型的使用")
-    # embeddings = XinferenceEmbeddings(server_url="http://10.1.104.172:9997", model_uid="text2vec-base-chinese-sentence")
-    embeddings = XinferenceEmbeddings(server_url="http://localhost:9997", model_uid="text2vec-base-chinese-sentence")
+    embeddings = XinferenceEmbeddings(server_url="http://10.1.104.172:9997", model_uid="text2vec-base-chinese-sentence")
+    # embeddings = XinferenceEmbeddings(server_url="http://localhost:9997", model_uid="text2vec-base-chinese-sentence")
     print("2.2 vectorstore 矢量數據存储在memory DocArrayInMemorySearch")
     # vectorstore = DocArrayInMemorySearch.from_documents(splits, embeddings)
     vectorstore = Chroma.from_documents(documents=splits, embedding=embeddings)
@@ -55,8 +55,8 @@ def main():
     prompt = hub.pull("rlm/rag-prompt")
 
     print("主模型的使用")
-    # model_local = Xinference(server_url="http://10.1.104.172:9997", model_uid="chatglm2")
-    llm = Xinference(server_url="http://localhost:9997", model_uid="chatglm2")
+    llm = Xinference(server_url="http://10.1.104.172:9997", model_uid="chatglm2")
+    # llm = Xinference(server_url="http://localhost:9997", model_uid="chatglm2")
     
     rag_chain = (
         {"context": retriever | format_docs, "question": RunnablePassthrough()}

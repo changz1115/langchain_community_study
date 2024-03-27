@@ -10,7 +10,7 @@ from langchain_community.vectorstores import DocArrayInMemorySearch
 from langchain_community.embeddings import OllamaEmbeddings
 
 def main():
-    model_local = ChatOllama(base_url="http://10.1.104.172:11434", model="gemma:2b.1")
+    model_local = ChatOllama(base_url="http://10.1.104.172:11434", model="gemma:2b")
 
     print("1. 读取文件并分词")
     documents = TextLoader("./三国演义白话文完整版.txt").load()

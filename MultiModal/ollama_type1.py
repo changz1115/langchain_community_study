@@ -3,7 +3,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 
 def main():
-    model_local = ChatOllama(base_url="http://10.1.104.172:11434", model="gemma:2b")
+    model_local = ChatOllama(base_url="http://10.1.104.172:11434", model="llava")
     template = "{topic}"
     prompt = ChatPromptTemplate.from_template(template)
     chain = prompt | model_local | StrOutputParser()

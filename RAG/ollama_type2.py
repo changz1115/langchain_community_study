@@ -1,3 +1,7 @@
+
+import bs4
+
+from langchain_community.document_loaders import WebBaseLoader
 from langchain_community.document_loaders import TextLoader
 from langchain_community import embeddings
 from langchain_community.embeddings.xinference import XinferenceEmbeddings
@@ -10,10 +14,17 @@ from langchain_community.vectorstores import DocArrayInMemorySearch
 from langchain_community.embeddings import OllamaEmbeddings
 
 def main():
-    model_local = ChatOllama(base_url="http://10.1.104.172:11434", model="gemma:2b")
+    model_local = ChatOllama(base_url="http://10.1.104.172:11434", model="llava")
 
     print("1. 读取文件并分词")
-    documents = TextLoader("./三国演义白话文完整版.txt").load()
+    documents = TextLoader("D:/project/langchain_community_study/RAG/file_return_code.txt").load()
+    # bs_strainer = bs4.SoupStrainer(class_=("post-content", "post-title", "post-header"))
+    # loader = WebBaseLoader(
+    #     web_paths=("https://lilianweng.github.io/posts/2023-06-23-agent/",),
+    #     bs_kwargs={"parse_only": bs_strainer},
+    # )
+    # documents = loader.load()
+
     text_splitter = CharacterTextSplitter.from_tiktoken_encoder(chunk_size=7500, chunk_overlap=100)
     doc_splits = text_splitter.split_documents(documents)
 
@@ -39,7 +50,7 @@ def main():
         | model_local
         | StrOutputParser()
     )
-    print(chain.invoke("身长七尺，细眼长髯的是谁？"))
+    print(chain.invoke("高位数字为4,低位数字为3的时候,什么意思?"))
 
 if __name__ == "__main__":
     main()

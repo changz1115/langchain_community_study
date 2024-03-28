@@ -5,7 +5,7 @@ from langchain_community.llms import Xinference
 from langchain_community.embeddings.xinference import XinferenceEmbeddings
 
 from langchain_community.document_loaders import TextLoader
-# from langchain_community.vectorstores import DocArrayInMemorySearch
+# from langchain_community.vectorstores import DocArrayInMemoRunnableParallelrySearch
 
 from langchain import hub
 from langchain_community.vectorstores import Chroma

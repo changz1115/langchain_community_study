@@ -36,8 +36,6 @@ llm = ChatOllama(base_url="http://10.1.104.172:11434", model="gemma")
 def format_docs(docs):
     return "\n\n".join(doc.page_content for doc in docs)
 
-
-
 q = "能详细说说maven都能干什么吗?"
 print(q)
 rag_chain_from_docs = (
@@ -49,4 +47,5 @@ rag_chain_from_docs = (
 rag_chain_with_source = RunnableParallel(
     {"context": retriever, "question": RunnablePassthrough()}
 ).assign(answer=rag_chain_from_docs)
+
 print(rag_chain_with_source.invoke(q))

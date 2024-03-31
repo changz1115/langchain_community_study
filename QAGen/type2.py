@@ -6,9 +6,12 @@ from langchain_community.vectorstores import Chroma
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_community.embeddings.xinference import XinferenceEmbeddings
+
 from langchain_community.llms import Xinference
-from langchain_community.chat_models import ChatOllama
+from langchain_community.embeddings.xinference import XinferenceEmbeddings
+# from langchain_community.chat_models import ChatOllama
+# from langchain_community.chat_models import OllamaEmbeddings
+
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_core.runnables import RunnableParallel
 
@@ -31,7 +34,6 @@ retriever = vectorstore.as_retriever()
 prompt = hub.pull("rlm/rag-prompt")
 
 # llm = ChatOllama(base_url="http://10.1.104.172:11434", model="gemma")
-# llm = Xinference(server_url="http://10.1.104.172:9997", model_uid="llama-2-chat")
 llm = Xinference(server_url="http://127.0.0.1:9997", model_uid="gemma-it")
 
 

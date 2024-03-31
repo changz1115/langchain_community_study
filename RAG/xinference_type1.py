@@ -4,7 +4,7 @@ from langchain.prompts import PromptTemplate
 
 def main():
     llm = Xinference(
-        server_url="http://10.1.104.172:9997", model_uid="chatglm2"
+        server_url="http://127.0.0.1:9997", model_uid="gemma-it"
     )
 
     # llm(

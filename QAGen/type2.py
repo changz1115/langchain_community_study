@@ -6,14 +6,17 @@ from langchain_community.vectorstores import Chroma
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_community.embeddings.xinference import XinferenceEmbeddings
+
 from langchain_community.llms import Xinference
-from langchain_community.chat_models import ChatOllama
+from langchain_community.embeddings.xinference import XinferenceEmbeddings
+# from langchain_community.chat_models import ChatOllama
+# from langchain_community.chat_models import OllamaEmbeddings
+
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_core.runnables import RunnableParallel
 
 print("loader")
-file = ("D:/project/langchain_community_study/QAGen/develop_txt.pdf")
+file = ("D:/project/vscodeproject/langchain_community_study/QAGen/develop_txt.pdf")
 loader = PyPDFLoader(file_path=file)
 docs = loader.load()
 
@@ -22,15 +25,16 @@ text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=20
 splits = text_splitter.split_documents(docs)
 
 print("vectorstore")
-embeddings = XinferenceEmbeddings(server_url="http://10.1.104.172:9997", model_uid="text2vec-base-chinese-sentence")
+# embeddings = XinferenceEmbeddings(server_url="http://10.1.104.172:9997", model_uid="text2vec-base-chinese-sentence")
+embeddings = XinferenceEmbeddings(server_url="http://127.0.0.1:9997", model_uid="text2vec-large-chinese")
 vectorstore = Chroma.from_documents(documents=splits, embedding=embeddings)
 
 # Retrieve and generate using the relevant snippets of the blog.
 retriever = vectorstore.as_retriever()
 prompt = hub.pull("rlm/rag-prompt")
 
-llm = ChatOllama(base_url="http://10.1.104.172:11434", model="gemma")
-# llm = Xinference(server_url="http://10.1.104.172:9997", model_uid="llama-2-chat")
+# llm = ChatOllama(base_url="http://10.1.104.172:11434", model="gemma")
+llm = Xinference(server_url="http://127.0.0.1:9997", model_uid="gemma-it")
 
 
 def format_docs(docs):

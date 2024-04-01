@@ -31,7 +31,7 @@ def main():
     print("2. 嵌入并存储")
     print("2.1")
     # embeddings = OllamaEmbeddings(base_url="http://10.1.104.172:11434", model="nomic-embed-text")
-    embeddings = XinferenceEmbeddings(server_url="http://10.1.104.172:9997", model_uid="text2vec-base-chinese-sentence")
+    embeddings = XinferenceEmbeddings(server_url="http://10.1.104.172:9997", model_uid="text2vec-large-chinese")
     print("2.2")
     vectorstore = DocArrayInMemorySearch.from_documents(doc_splits, embeddings)
     print("2.3")

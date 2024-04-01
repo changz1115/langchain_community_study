@@ -1,4 +1,0 @@
-question,answer
-什么是maven,maven是一种工具
-什么是JVM内存模型，用来执行应用程序的
-drop、delete与truncate的区别，delete和truncate只删除表的数据不删除表的结构 drop删除表结构

@@ -1,0 +1,14 @@
+[
+    {
+        "query": "什么是maven?",
+        "answer": "maven是一种工具,有点费劲"
+    },
+    {
+        "query": "什么是JVM内存模型?",
+        "answer": "用来执行应用程序的"
+    },
+    {
+        "query": "drop、delete与truncate的区别?",
+        "answer": "delete和truncate只删除表的数据不删除表的结构 drop删除表结构"
+    }
+]

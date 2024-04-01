@@ -1,10 +1,29 @@
 
 #
+# https://python.langchain.com/docs/use_cases/question_answering/
+# https://learn.deeplearning.ai/
+#
+
+
+#
 # from langchain.document_loaders import TextLoader
 import pandas
+from langchain_community.document_loaders import JSONLoader
 
 print("loader")
-file = ("D:/project/langchain_community_study/QAGen/qa.csv")
+file = ("D:/project/langchain_community_study/QAGen/qa.json")
+
+
+
+loader = JSONLoader(
+    file_path=file,
+    jq_schema='.messages[].content',
+    text_content=False)
+
+data = loader.load()
+
+
+
 
 df = pandas.read_csv(file)
 print(df.shape)

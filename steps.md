@@ -1,4 +1,12 @@
 
+ggml
+https://ggml-python.readthedocs.io/en/latest/
+
+https://inference.readthedocs.io/zh-cn/latest/index.html
+https://huggingface.co/models
+https://modelscope.cn/models
+
+
 
 ```txt
 1. type1 chat with Xinference and ollama    OK

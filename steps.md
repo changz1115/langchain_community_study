@@ -6,7 +6,10 @@ https://inference.readthedocs.io/zh-cn/latest/index.html
 https://huggingface.co/models
 https://modelscope.cn/models
 
+https://python.langchain.com/docs/use_cases/question_answering/
+https://learn.deeplearning.ai/
 
+https://gptcache.readthedocs.io/en/latest/bootcamp/langchain/qa_generation.html
 
 ```txt
 1. type1 chat with Xinference and ollama    OK

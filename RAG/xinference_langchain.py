@@ -55,7 +55,7 @@ def main():
     prompt = hub.pull("rlm/rag-prompt")
 
     print("主模型的使用")
-    llm = Xinference(server_url="http://10.1.104.172:9997", model_uid="chatglm2")
+    llm = Xinference(server_url="http://10.1.104.172:9997", model_uid="gemma-it")
     # llm = Xinference(server_url="http://localhost:9997", model_uid="chatglm2")
     
     rag_chain = (

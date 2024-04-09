@@ -37,12 +37,16 @@ pip install "xinference[all]"
 
 # 本机IP地址
 xinference-local --host <本机IP地址> --port 9997
+<<<<<<< HEAD
 xinference-local --host 127.0.0.1 --port 9997
 XINFERENCE_MODEL_SRC="modelscope" xinference-local --host localhost --port 9997
 
 setx XINFERENCE_MODEL_SRC "modelscope"
 xinference-local --host localhost --port 9997
 
+=======
+XINFERENCE_MODEL_SRC=modelscope xinference-local --host 127.0.0.1 --port 9997
+>>>>>>> 1fc3d6b (	修改：     QAGen/type2.py)
 HF_ENDPOINT=https://hf-mirror.com XINFERENCE_HOME=/usr/xinference xinference-local --host 10.1.104.172 --port 9997
 
 ```shell

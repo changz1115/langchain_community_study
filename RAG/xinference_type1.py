@@ -15,8 +15,7 @@ def main():
     template = "{topic}"
     prompt = PromptTemplate.from_template(template)
     llm_chain = LLMChain(prompt=prompt, llm=llm)
-    generated = llm_chain.run("能详细说说maven都能干什么吗?")
-    print(generated)
+    print(generated = llm_chain.invoke("能详细说说maven都能干什么吗?"))
 
 if __name__ == "__main__":
     main()

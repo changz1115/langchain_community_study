@@ -16,7 +16,8 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain_core.runnables import RunnableParallel
 
 print("loader")
-file = ("D:/project/langchain_community_study/QAGen/develop_txt.pdf")
+# file = ("D:/project/langchain_community_study/QAGen/develop_txt.pdf")
+file = ("/home/changzheng/文档/project/vscode/langchain_community_study/QAGen/develop_txt.pdf")
 loader = PyPDFLoader(file_path=file)
 docs = loader.load()
 
@@ -25,16 +26,25 @@ text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=20
 splits = text_splitter.split_documents(docs)
 
 print("vectorstore")
+<<<<<<< HEAD
 embeddings = XinferenceEmbeddings(server_url="http://10.1.104.172:9997", model_uid="text2vec-base-chinese-sentence")
 # embeddings = XinferenceEmbeddings(server_url="http://127.0.0.1:9997", model_uid="text2vec-large-chinese")
+=======
+embeddings = XinferenceEmbeddings(server_url="http://127.0.0.1:9997", model_uid="text2vec-base-chinese")
+>>>>>>> 1fc3d6b (	修改：     QAGen/type2.py)
 vectorstore = Chroma.from_documents(documents=splits, embedding=embeddings)
 
 # Retrieve and generate using the relevant snippets of the blog.
 retriever = vectorstore.as_retriever()
 prompt = hub.pull("rlm/rag-prompt")
 
+<<<<<<< HEAD
 llm = ChatOllama(base_url="http://10.1.104.172:11434", model="gemma")
 # llm = Xinference(server_url="http://10.1.104.172:9997", model_uid="gemma-it")
+=======
+# llm = ChatOllama(base_url="http://10.1.104.172:11434", model="gemma")
+llm = Xinference(server_url="http://127.0.0.1:9997", model_uid="gemma-it")
+>>>>>>> 1fc3d6b (	修改：     QAGen/type2.py)
 
 
 def format_docs(docs):

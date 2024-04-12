@@ -7,7 +7,7 @@ def main():
     template = "{topic}"
     prompt = ChatPromptTemplate.from_template(template)
     chain = prompt | model_local | StrOutputParser()
-    print(chain.invoke("能详细说说maven都能干什么吗?"))
+    print(chain.invoke("这样定义变量可以吗？\nvar statHttpByte"))
 
 if __name__ == "__main__":
     main()

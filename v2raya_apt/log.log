@@ -1,0 +1,20 @@
+024/04/13 08:53:27.471 [I] [pre.go:162] init DB
+2024/04/13 08:53:27.502 [A] [main.go:29] V2Ray binary is /usr/bin/v2ray
+2024/04/13 08:53:27.502 [A] [main.go:29] V2Ray asset directory is /run/user/0/v2raya
+2024/04/13 08:53:27.502 [A] [main.go:29] v2rayA working directory is /
+2024/04/13 08:53:27.502 [A] [main.go:29] v2rayA configuration directory is /etc/v2raya
+2024/04/13 08:53:27.502 [A] [main.go:29] Golang: go1.22.0
+2024/04/13 08:53:27.502 [A] [main.go:29] OS: linux
+2024/04/13 08:53:27.502 [A] [main.go:29] Arch: amd64
+2024/04/13 08:53:27.502 [A] [main.go:29] Lite: false
+2024/04/13 08:53:27.502 [A] [main.go:29] Version: 2.2.5.1
+2024/04/13 08:53:27.502 [A] [main.go:29] Starting...
+
+base) root@changzheng-MS-7B54:/run/user/0/v2raya# ll
+总计 0
+drwx------ 2 root root 80  4月 13 08:53 ./
+drwx------ 3 root root 60  4月 13 08:53 ../
+lrwxrwxrwx 1 root root 26  4月 13 08:53 geoip.dat -> /usr/share/v2ray/geoip.dat
+lrwxrwxrwx 1 root root 28  4月 13 08:53 geosite.dat -> /usr/share/v2ray/geosite.dat
+(base) root@changzheng-MS-7B54:/run/user/0/v2raya# cd /usr/share/
+(base) root@changzheng-MS-7B54:/usr/share# 

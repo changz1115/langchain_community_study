@@ -1,0 +1,10 @@
+2024/04/13 08:29:01.405 [A] [main.go:27] downloading missing geoip.dat and geosite.dat
+2024/04/13 08:29:01.405 [I] [geoip.go:16] Downloading https://github.com/v2fly/geoip/releases/latest/download/geoip.dat to /var/snap/v2raya/30/geoip/geoip.dat.new
+2024/04/13 08:29:31.430 [W] [pre.go:190] UpdateLocalGeoIP: Get "https://github.com/v2fly/geoip/releases/latest/download/geoip.dat": dial tcp 20.205.243.166:443: i/o timeout
+2024/04/13 08:29:31.430 [E] [main.go:27] UpdateLocalGeoIP: Get "https://github.com/v2fly/geoip/releases/latest/download/geoip.dat": dial tcp 20.205.243.166:443: i/o timeout
+2024/04/13 08:29:31.655 [I] [main.go:25] Cannot load TPROXY module: failed to modprobe xt_TPROXY: sh: 1: modprobe: Permission denied
+2024/04/13 08:29:31.669 [A] [main.go:27] downloading missing geoip.dat and geosite.dat
+2024/04/13 08:29:31.669 [I] [geoip.go:16] Downloading https://github.com/v2fly/geoip/releases/latest/download/geoip.dat to /var/snap/v2raya/30/geoip/geoip.dat.new
+2024/04/13 08:29:46.972 [I] [pre.go:190] download[geoip.dat]: SUCCESS
+2024/04/13 08:29:46.986 [I] [geosite.go:17] Downloading https://github.com/v2fly/domain-list-community/releases/latest/download/dlc.dat to /var/snap/v2raya/30/geoip/geosite.dat.new
+2024/04/13 08:29:49.268 [I] [pre.go:196] download[geosite.dat]: SUCCESS
